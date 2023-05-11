@@ -20,11 +20,21 @@ url = "https://raw.githubusercontent.com/jbrownlee/Datasets/master/iris.csv"
 names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
 dataset = read_csv(url, names=names)
 
+## DATA
 # shape of the dataset
 print(dataset.shape)
-
 # can peak at the data with head
 print(dataset.head(20))
-
 # we can even get a statistical summary
 print(dataset.describe())
+
+
+## PLOTS
+# box and whisker plots
+dataset.plot(kind='box', subplots=True, layout=(2,2), sharex=False, sharey=False)
+# histograms
+dataset.hist()
+# scatter plots for multi variables
+scatter_matrix(dataset)
+# show the data
+#pyplot.show()
